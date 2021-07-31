@@ -3,7 +3,7 @@ class CreateBookings < ActiveRecord::Migration[6.0]
     create_table :bookings do |t|
       t.date :date
       t.boolean :archived
-      t.references :user, null: false, foreign_key: true
+      t.references :customer, foreign_key: {to_table: :users}
 
       t.timestamps
     end
