@@ -8,6 +8,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @is_owner = current_user.own_pets.length > 0 ? true : false
   end
 
   def new

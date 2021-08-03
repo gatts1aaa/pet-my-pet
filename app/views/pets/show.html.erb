@@ -5,6 +5,20 @@
 <%= @pet.pricing %>
 <%= @pet.owner %>
 
+
+<% if @is_owner %>
+<% else %>
+<% end %>
+
+<!--
+  Je suis dans un profil pet :
+  - Si je suis un  customer, je peux choisir une date, et créer un booking
+  - Si je suis un owner, je peux updater les infos du pet (photos / description)
+ -->
+
+
+
+
 <!-- t.string "name"
 t.integer "age"
 t.string "category"
