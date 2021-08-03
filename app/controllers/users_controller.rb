@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def profile
   end
 
@@ -7,4 +8,5 @@ class UsersController < ApplicationController
   def article_params
   params.require(:user).permit(:name, :description, :photo)
   end
+
 end
