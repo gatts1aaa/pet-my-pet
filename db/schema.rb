@@ -18,22 +18,22 @@ ActiveRecord::Schema.define(version: 2021_07_31_134848) do
   create_table "bookings", force: :cascade do |t|
     t.date "date"
     t.boolean "archived"
-    t.bigint "customer_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_bookings_on_customer_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "pets", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.integer "age"
     t.string "category"
     t.text "description"
-    t.integer "pricing"
-    t.bigint "owner_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["owner_id"], name: "index_pets_on_owner_id"
+    t.string "pricing"
+    t.bigint "users_id"
+    t.index ["users_id"], name: "index_pets_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,6 +50,5 @@ ActiveRecord::Schema.define(version: 2021_07_31_134848) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "users", column: "customer_id"
-  add_foreign_key "pets", "users", column: "owner_id"
+  add_foreign_key "bookings", "users"
 end
