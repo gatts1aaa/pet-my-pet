@@ -1,2 +1,50 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container {
+  margin-top: 64px;
+}
+
+.text-date {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.p-small {
+  margin-right: 16px;
+}
+
+.container-card {
+  margin-top: 64px;
+}
+
+.card-pet {
+  margin-top: 64px;
+}
+.card-pet-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-pet-content-pricing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fa-bone {
+  margin-bottom: 24px;
+  padding-right: 8px;
+  transform: rotate(-45deg);
+}
+
+.card-pet-image {
+  background-color: $light-gray;
+  border-radius: 12px;
+  height: 20vh;
+  margin-bottom: 16px;
+}
+
