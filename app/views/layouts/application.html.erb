@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://use.typekit.net/zpr8ueq.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -12,7 +13,7 @@
   </head>
 
   <body>
-    <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+    <%= render 'shared/navbar' %>
     <%= yield %>
     <%= render 'shared/flashes' %>
   </body>
