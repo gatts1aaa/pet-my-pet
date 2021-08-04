@@ -1,12 +1,30 @@
-<h1>Nous sommes dans l'index</h1>
-
-<ul>
-  <% @pets.each do |pet| %>
-    <li><%= pet.name %></li>
-  <% end %>
-</ul>
-
-<div class="form-group">
-  <label for="date">Choisir une journée</label>
-  <input type="date" id="date" placeholder="DD/MM/YYYY" class="form-control">
+<div class="container">
+  <div class="text-date">
+      <label for="date"><p class="p-small"><strong>Besoin d'amour ? Louez un pet pour un jour !</strong></p></label>
+    <div class="form-group">
+      <input type="date" id="date" placeholder="DD/MM/YYYY" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <div class="container-card"></div>
+      <% @pets.each do |pet| %>
+        <div class="col-lg-4 mb-4">
+          <div class="card-pet">
+            <div class="card-pet-image">
+            </div>
+            <div><h3><%= link_to pet.name, pet %></h3></div>
+            <div class="card-pet-content">
+              <p><%= pet.category %></p>
+              <div class="card-pet-content-pricing">
+                <i class="fas fa-bone"></i>
+                <p><strong><%= pet.pricing %></strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+   </div>
+ </div>
 </div>
+
+
