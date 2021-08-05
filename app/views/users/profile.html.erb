@@ -1,4 +1,16 @@
-<h1>Coucou <%= current_user.name %></h1>
 
+<div class="container">
+  <div class="row">
 
-<%= link_to 'AJOUTER UN ANIMAL', new_pet_path %>
+    <div class="col-12 col-lg-8">
+      <h1>Bonjour, je suis <%= current_user.name %> !</h1>
+      <%= current_user.decription %>
+    </div>
+
+    <div class="col-12 col-lg-4">
+      <%= link_to "Add a pet !", new_pet_path , class: "btn btn-flat" %>
+    </div>
+
+  </div>
+</div>
+

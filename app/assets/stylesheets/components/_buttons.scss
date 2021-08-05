@@ -1,0 +1,15 @@
+.btn-flat {
+  font-family: proxima-soft, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 32px;
+  background: #FF517B;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #BF3D5C;
+  color: white;
+}
