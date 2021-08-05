@@ -16,7 +16,10 @@
 
 
 <% if @owner %>
-  <%= "coucou je suis propriétaire de"  %> <!-- pet.category -->
-  <%= current_user.own_pets %>
+  <%= "coucou je suis propriétaire de"  %>
+  <% current_user.own_pets do |pet| %>
+
+    <%= raise %>
+  <% end %>
 <% else %>
 <% end %>
