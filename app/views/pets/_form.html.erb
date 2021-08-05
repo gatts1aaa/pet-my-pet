@@ -1,8 +1,15 @@
-<%= simple_form_for(@pet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :category %>
-  <%= f.input :description %>
-  <%= f.input :pricing %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <h1>Bonjour <%= current_user.name %>, voulez-vous ajouter un nouveau pet ?</h1>
+      <%= simple_form_for(@pet) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :age %>
+        <%= f.input :category %>
+        <%= f.input :description %>
+        <%= f.input :pricing %>
+        <input class="btn btn-flat" type="submit" name="submit"/>
+      <% end %>
+    </div>
+  </div>
+</div>
