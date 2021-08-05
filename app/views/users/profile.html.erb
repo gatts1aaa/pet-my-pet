@@ -1,16 +1,22 @@
-
 <div class="container">
   <div class="row">
-
-    <div class="col-12 col-lg-8">
-      <h1>Bonjour, je suis <%= current_user.name %> !</h1>
-      <%= current_user.decription %>
-    </div>
-
-    <div class="col-12 col-lg-4">
-      <%= link_to "Add a pet !", new_pet_path , class: "btn btn-flat" %>
-    </div>
-
+      <div class="col-md-8">
+          <div class="col-md-12">
+              <h1>Bonjour, je suis <%= current_user.name %> !</h1><br>
+              <%= current_user.decription %>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="col-md-12">
+              <%= link_to "Add a pet !", new_pet_path , class: "btn btn-flat" %>
+          </div>
+      </div>
   </div>
 </div>
 
+
+<% if @owner %>
+  <%= "coucou je suis propriétaire de"  %> <!-- pet.category -->
+  <%= current_user.own_pets %>
+<% else %>
+<% end %>

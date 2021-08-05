@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-  def profile
+  def profile # = show
+    @owner = !current_user.own_pets.empty?
   end
 
   private
