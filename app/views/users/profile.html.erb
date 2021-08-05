@@ -13,3 +13,10 @@
       </div>
   </div>
 </div>
+
+
+<% if @owner %>
+  <%= "coucou je suis propriétaire de"  %> <!-- pet.category -->
+  <%= current_user.own_pets %>
+<% else %>
+<% end %>
