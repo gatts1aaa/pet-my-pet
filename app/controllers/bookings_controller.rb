@@ -1,13 +1,17 @@
 class BookingsController < ApplicationController
+  belongs_to :pet, counter_cache: true
+  belongs_to :user
 
-def new
-  @booking = Booking.new
-end
+  validates :start_date, :end_date, presence: true, availability: true
+  validate :end_date_after_start_date
 
-def create
-end
+  private
 
-# def archive?
-# end
+  def end_date_after_start_date
+    return if end_date.blank? || start_date.blank?
 
+    if end_date < start_date
+      errors.add(:end_date, "doit être après la date de début")
+    end
+  end
 end
