@@ -4,7 +4,10 @@
 <%= @pet.description %>
 <%= @pet.pricing %>
 <%= @pet.owner %>
-<% end %>
+<div class="date">
+  <%= render "bookings/form" %>
+</div>
+
 
 <% if @is_owner %>
 <% else %>

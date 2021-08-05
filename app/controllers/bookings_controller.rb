@@ -1,17 +1,19 @@
 class BookingsController < ApplicationController
-  belongs_to :pet, counter_cache: true
-  belongs_to :user
-
-  validates :start_date, :end_date, presence: true, availability: true
-  validate :end_date_after_start_date
+  def create
+    @pet = Pet.find(params[:pet_id])
+    @booking = Booking.new(booking_params)
+    @booking.pet = @pet
+    @booking.user = current_user
+    if @booking.save
+      redirect_to pet_path
+    else
+      render 'pet/show'
+    end
+  end
 
   private
 
-  def end_date_after_start_date
-    return if end_date.blank? || start_date.blank?
-
-    if end_date < start_date
-      errors.add(:end_date, "doit être après la date de début")
-    end
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

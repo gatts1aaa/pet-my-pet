@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
-  belongs_to :pet, counter_cache: true
-  belongs_to :user
+  belongs_to :customers, counter_cache: true, class_name: 'User'
+  belongs_to :pet
   has_one :owner, through: :pet
 
   validates :start_date, :end_date, presence: true, availability: true
