@@ -1,4 +1,3 @@
-<h1>Coucou <%= current_user.name %></h1>
 <div class="container">
   <div class="row">
       <div class="col-md-8">
@@ -16,7 +15,7 @@
             <strong><%= "Je suis l'heureux propriétaire de :" %></strong>
             <div><br>
               <% current_user.own_pets.each do |pet| %>
-                <p><%= link_to pet.name, pet_path(pet) %></p>
+                <p><%= link_to pet.name, pet_path(pet) %></p>÷/
               <% end %>
             </div>
           <% end %>
