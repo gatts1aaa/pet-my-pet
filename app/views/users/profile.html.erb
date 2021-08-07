@@ -15,7 +15,7 @@
           <% if @owner %>
             <strong><%= "Je suis l'heureux propriétaire de :" %></strong>
             <div><br>
-              <% current_user.own_pets.each do |pet| %>
+              <% @current_user.own_pets.each do |pet| %>
                 <p><%= link_to pet.name, pet_path(pet) %></p>÷/
               <% end %>
             </div>
@@ -24,4 +24,5 @@
       </div>
   </div>
 </div>
+
 
