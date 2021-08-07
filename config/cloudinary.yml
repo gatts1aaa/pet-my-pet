@@ -1,0 +1,18 @@
+development:
+  cloud_name: dhamloe8c
+  api_key: '483384788117266'
+  api_secret: pXGtNYlz7DQylpLhvwYees0Il4w
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dhamloe8c
+  api_key: '483384788117266'
+  api_secret: pXGtNYlz7DQylpLhvwYees0Il4w
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dhamloe8c
+  api_key: '483384788117266'
+  api_secret: pXGtNYlz7DQylpLhvwYees0Il4w
+  enhance_image_tag: true
+  static_file_support: false
