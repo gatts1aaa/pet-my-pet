@@ -11,10 +11,13 @@
         <div class="col-lg-4 mb-4">
           <div class="card-pet">
             <div class="card-pet-image">
+              <% pet.photos.each do |photo| %>
+                <%= cl_image_tag photo.key, class: "image-size"%>
+              <% end %>
             </div>
-            <div><h3><%= link_to pet.name, pet %></h3></div>
+
             <div class="card-pet-content">
-              <p><%= pet.category %></p>
+              <h3><%= link_to pet.name, pet %></h3>
               <div class="card-pet-content-pricing">
                 <i class="fas fa-bone"></i>
                 <p><strong><%= pet.pricing %></strong></p>
@@ -26,5 +29,6 @@
    </div>
  </div>
 </div>
+
 
 
