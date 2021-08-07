@@ -1,12 +1,4 @@
-<%= @pet.name %>
-<%= @pet.age %>
-<%= @pet.category %>
 
-<%= @pet.pricing %>
-<%= @pet.owner %>
-<div class="date">
-  <%= render "bookings/form" %>
-</div>
 
 
 <div class="container">
@@ -17,18 +9,27 @@
               <% @pet.photos.each do |photo| %>
               <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
               <% end %>
+              <div class="card-pet-content-pricing">
+                <p>j'ai <%= @pet.age %> ans, je suis un <%= @pet.category %></p>
+                <p>, et j'ai besoin de <strong><%= @pet.pricing %></strong></p>
+                <span>&nbsp&nbsp</span>
+                <i class="fas fa-bone"></i>
+              </div>
               <%= @pet.description %>
+              <div><br>
+                <% if @is_owner %>
+                <p>Je suis l'animal de <strong><%= @pet.owner.name %></strong></p>
+                <% end %>
+              </div>
+
           </div>
       </div>
       <div class="col-md-4">
-          <div class="col-md-12">
-              <%= link_to "Tu veux me câliner ?", "#" , class: "btn btn-flat" %>
-          </div>
+        <div class="date">
+          <%= render "bookings/form" %>
+        </div>
       </div>
   </div>
 </div>
 
-<% if @is_owner %>
-<% else %>
-<% end %>
 
