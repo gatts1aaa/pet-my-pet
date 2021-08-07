@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :owner_bookings, through: :own_pets, source: :bookings
   has_many :customer_bookings, foreign_key: 'customer_id', class_name: 'Booking'
   has_many :customer_pets, -> { distinct }, through: :customer_bookings, source: :pet
+  has_one_attached :avatar
   has_one_attached :photo
 end
