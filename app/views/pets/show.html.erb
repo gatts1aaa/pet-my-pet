@@ -1,13 +1,29 @@
 <%= @pet.name %>
 <%= @pet.age %>
 <%= @pet.category %>
-<%= @pet.description %>
+
 <%= @pet.pricing %>
 <%= @pet.owner %>
 <div class="date">
   <%= render "bookings/form" %>
 </div>
 
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-8">
+          <div class="col-md-12">
+              <h1>Bonjour, je suis <%= @pet.name %> !</h1><br>
+              <%= @pet.description %>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="col-md-12">
+              <%= link_to "Tu veux me câliner ?", "#" , class: "btn btn-flat" %>
+          </div>
+      </div>
+  </div>
+</div>
 
 <% if @is_owner %>
 <% else %>
