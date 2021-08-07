@@ -14,6 +14,9 @@
       <div class="col-md-8">
           <div class="col-md-12">
               <h1>Bonjour, je suis <%= @pet.name %> !</h1><br>
+              <% @pet.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
               <%= @pet.description %>
           </div>
       </div>
