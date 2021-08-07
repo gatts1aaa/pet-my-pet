@@ -60,12 +60,15 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'profile correctement supprimé.' }
       format.json { head :no_content }
-    end
+  end
+
+  def show
+    @user = User.find(params[:id])
+
   end
 
   private
-
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
   end
@@ -73,6 +76,14 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:name, :description, :avatar, :photos)
+
+  def article_params
+    params.require(:user).permit(:name, :description, :photo)
+    params.require(:user).permit(:name, :decription, :photo)
+  end
+
+  def find_pet
+    @user = User.find(params[:id])
   end
 end
 

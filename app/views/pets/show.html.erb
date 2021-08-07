@@ -4,6 +4,9 @@
 
 <%= @pet.pricing %>
 <%= @pet.owner %>
+<div class="date">
+  <%= render "bookings/form" %>
+</div>
 
 
 <div class="container">
@@ -26,21 +29,3 @@
 <% else %>
 <% end %>
 
-<!--
-  Je suis dans un profil pet :
-  - Si je suis un  customer, je peux choisir une date, et créer un booking
-  - Si je suis un owner, je peux updater les infos du pet (photos / description)
- -->
-
-
-
-
-<!-- t.string "name"
-t.integer "age"
-t.string "category"
-t.text "description"
-t.integer "pricing"
-t.bigint "owner_id"
-t.datetime "created_at", precision: 6, null: false
-t.datetime "updated_at", precision: 6, null: false
-t.index ["owner_id"], name: "index_pets_on_owner_id" -->

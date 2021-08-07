@@ -9,6 +9,7 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
     @is_owner = current_user.own_pets.length > 0 ? true : false
+    @booking = Booking.new
   end
 
   def new
@@ -39,7 +40,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :category, :description, :pricing)
+    params.require(:pet).permit(:name, :age, :category, :description, :pricing, photos: [])
   end
 
   def find_pet

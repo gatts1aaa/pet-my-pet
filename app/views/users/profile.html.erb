@@ -1,3 +1,4 @@
+<h1>Coucou <%= current_user.name %></h1>
 <div class="container">
   <div class="row">
       <div class="col-md-8">
@@ -7,16 +8,20 @@
           </div>
       </div>
       <div class="col-md-4">
-          <div class="col-md-12">
-              <%= link_to "Add a pet !", new_pet_path , class: "btn btn-flat" %>
-          </div>
+        <div class="col-md-12">
+          <%= link_to "Add a pet !", new_pet_path , class: "btn btn-flat" %>
+        </div><br>
+        <div>
+          <% if @owner %>
+            <strong><%= "Je suis l'heureux propriétaire de :" %></strong>
+            <div><br>
+              <% current_user.own_pets.each do |pet| %>
+                <p><%= link_to pet.name, pet_path(pet) %></p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
   </div>
 </div>
 
-
-<% if @owner %>
-  <%= "coucou je suis propriétaire de"  %> <!-- pet.category -->
-  <%= current_user.own_pets %>
-<% else %>
-<% end %>
